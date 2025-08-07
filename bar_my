@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+PATH_MY="/home/adam/.lemonbar_final"
+if [ -p FIFO ] ; then
+	rm FIFO
+fi
+mkfifo FIFO
+sleep 2
+xtitle -sf "%s\n" >> FIFO &
+./clock_my >> FIFO &
+bspc subscribe report >> FIFO &
+python parse.py < FIFO | lemonbar -p -B \#050505 -g 1280x20
+
+

@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+# Define the clock
+bspc config top_padding 0
+bspc config bottom_padding 0
+pkill lemonbar
+pkill bspc
+pkill xtitle
+pkill _my
+

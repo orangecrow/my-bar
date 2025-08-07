@@ -1,0 +1,10 @@
+#!/usr/bin/sh
+
+while true; do
+#		echo "$(upower -i $(upower -e |grep bat) |grep percentage)"
+#		echo "$(upower -i $(upower -e |grep bat) |grep time)"
+#		echo "$(sensors|grep CPU)"
+		echo "$(sensors|grep edge)"
+		echo "Clock: $(date "+%a %b %d, %T")" 2> /dev/null
+		sleep 1
+done
