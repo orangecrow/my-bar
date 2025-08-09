@@ -1,5 +1,5 @@
 #!/usr/bin/sh
-PATH_MY="/home/adam/.lemonbar_final"
+cd /home/adam/.lemonbar_final
 if [ -p FIFO ] ; then
 	rm FIFO
 fi
