@@ -1,5 +1,5 @@
 #!/usr/bin/sh
-cd /path/to/directory/with/these/files
+cd /home/adam/.lemonbar_final
 if [ -p FIFO ] ; then
 	rm FIFO
 fi
@@ -8,6 +8,7 @@ sleep 2
 xtitle -sf "%s\n" >> FIFO &
 ./clock_my >> FIFO &
 bspc subscribe report >> FIFO &
-python parse.py < FIFO | lemonbar -p -B \#050505 -g 1280x20
+python parse_my.py < FIFO| ./lemonbar -p -B \#050505 -g 1280x20
+#python parse.py < FIFO | ./lemonbar -p -B \#050505 -g 1920x20
 
 
